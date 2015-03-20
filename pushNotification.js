@@ -39,7 +39,7 @@ function initialize() {
         if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
             try {
                 pushNotification.register(
-                    successHandler, errorHandler, { "senderID":"562539000000", "ecb":"window.onNotificationGCM" });
+                    successHandler, errorHandler, { "senderID":"984949831491", "ecb":"window.onNotificationGCM" });
             } catch(err)
             {
                 txt="There was an error on this page.\n\n";
