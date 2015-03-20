@@ -5,7 +5,7 @@
                 try 
                 { 
                             var pushNotification
-                    pushNotification = window.plugins.pushNotification;
+                    pushNotification = window.plugins.PushNotification;
               //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
               alert('Registering ' + device.platform);
                     if(device.platform == 'android' || device.platform == 'Android' ||device.platform == 'amazon-fireos' ) {
