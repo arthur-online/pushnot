@@ -4,10 +4,10 @@
 <script>
   function initPushwoosh()
 {
-  alert('inside');
+  alert('step 1');
 
     var pushNotification = window.plugins.pushNotification;
- 
+ alert('step 1a'+pushNotification)
     //set push notifications handler
     document.addEventListener('push-notification', function(event) {
         var title = event.notification.title;
@@ -16,7 +16,7 @@
         if(typeof(userData) != "undefined") {
             console.warn('user data: ' + JSON.stringify(userData));
         }
-                                     
+         alert('step 2');                            
         alert(title);
     });
  
