@@ -35,14 +35,13 @@
 
 function init() {      
 alert('inside');
-    //document.addEventListener("deviceready", initPushwoosh, true);
-  document.addEventListener("deviceready", function(){
+    document.addEventListener("deviceready", initPushwoosh(), true);
+  /*document.addEventListener("deviceready", function(){
       alert("123");
- },true);
+ },true);*/
     //rest of the code
 }
   init();
-  alert('a');
 </script>
 </head>
 <body >
