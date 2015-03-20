@@ -6,13 +6,13 @@ init: function() {
     onDeviceReady: function(){
        // DO STUFF
        // ....
-
+alert('1');
        // ENABLE PUSH
        this.push_init();
     },
 
     push_init: function(){
-        app.SENDER_ID = 123456789; // replaced by my actual GCM project no
+        app.SENDER_ID = "984949831491"; // replaced by my actual GCM project no
 
         var pushNotification = window.plugins.pushNotification;
 
