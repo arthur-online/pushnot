@@ -1,21 +1,17 @@
-
-            function onDeviceReady() {
+    function onDeviceReady() {
+                alert('Device is ready');
                 try 
                 { 
-                                         alert('Device is ready');
-
-
- pushNotification = window.plugins.pushNotification;
-                  
+                    pushNotification = window.plugins.pushNotification;
               //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
               alert('Registering ' + device.platform);
-                    if(device.platform == 'android' || device.platform == 'Android' ||device.platform == 'amazon-fireos' ) {
+       if (device.platform == 'android' || device.platform == 'Android') {
                         pushNotification.register(
                         successHandler, 
                         errorHandler, 
                         {
-                            "senderID":"984949831491",
-                            "ecb":"onNotification"
+                            "senderID":984949831491,
+                            "ecb":"onNotificationGCM"
                         });     // required!
 
                         alert('Registered the Android device');
@@ -29,7 +25,7 @@
                 { 
                     txt="There was an error on this page.\n\n"; 
                     txt+="Error description: " + err.message + "\n\n"; 
-                    alert(txt); 
+                    //alert(txt); 
                     alert('Error: ' + err.message);
                 } 
             }
@@ -55,7 +51,7 @@
             }
 
             // handle GCM notifications for Android
-            function onNotification(e) {
+            function onNotificationGCM(e) {
                 //$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
                 alert('EVENT -> RECEIVED:' + e.event);
 
