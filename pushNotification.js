@@ -1,10 +1,14 @@
-var pushNotification;
+document.addEventListener("deviceready", function() {
+  // Here you can use it:
+  var pushNotification = window.plugins.pushNotification;
+  ...
+}, false);
 
             function onDeviceReady() {
                 alert('Device is ready');
                 try 
                 { 
-                    pushNotification = window.plugins.pushNotification;
+                   // pushNotification = window.plugins.pushNotification;
               //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
               alert('Registering ' + device.platform);
                     if(device.platform == 'android' || device.platform == 'Android' ||device.platform == 'amazon-fireos' ) {
