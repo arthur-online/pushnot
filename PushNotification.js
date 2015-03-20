@@ -5,7 +5,7 @@
                                          alert('Device is ready');
 
 if (!window.plugins.pushNotification) {
-  pushNotification = window.plugins.pushNotification;
+  pushNotification = window.plugins.PushNotification;
 }
                   
               //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
