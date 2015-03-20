@@ -1,7 +1,7 @@
 var pushNotification;
 
             function onDeviceReady() {
-                alert('Device is ready')
+                alert('Device is ready');
                 try 
                 { 
                     pushNotification = window.plugins.pushNotification;
@@ -12,7 +12,7 @@ var pushNotification;
                         successHandler, 
                         errorHandler, 
                         {
-                            "senderID":"XXXXXXXXXX",
+                            "senderID":"984949831491",
                             "ecb":"onNotification"
                         });     // required!
 
@@ -136,7 +136,7 @@ var pushNotification;
                 alert('Error = ' + error);
             }
 
-            document.addEventListener('deviceready', onDeviceReady, true);
+            document.addEventListener('deviceready', onDeviceReady(), true);
 
 alert('regID = ' + e.regid);            
 alert('Reg code completed');
