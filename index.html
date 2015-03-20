@@ -34,8 +34,10 @@
 }
 
 function init() {
-    document.addEventListener("deviceready", initPushwoosh, true);
- 
+    //document.addEventListener("deviceready", initPushwoosh, true);
+  document.addEventListener("deviceready", function(){
+      alert("123");
+ },true);
     //rest of the code
 }
   
