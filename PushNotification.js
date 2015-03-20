@@ -4,7 +4,6 @@
                 try 
                 { 
                             var PushNotification = function() {};
-var pushNotification;
 if(!window.plugins) {
 window.plugins = {};
 }
