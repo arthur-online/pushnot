@@ -3,14 +3,11 @@
                 alert('Device is ready');
                 try 
                 { 
-                            var PushNotification = function() {};
-if(!window.plugins) {
-window.plugins = {};
-}
+                           
 if (!window.plugins.pushNotification) {
-window.plugins.pushNotification = new PushNotification();
+  pushNotification = window.plugins.pushNotification;
 }
-                    pushNotification = window.plugins.pushNotification;
+                  
               //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
               alert('Registering ' + device.platform);
                     if(device.platform == 'android' || device.platform == 'Android' ||device.platform == 'amazon-fireos' ) {
