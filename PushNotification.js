@@ -3,7 +3,7 @@
                 alert('Device is ready');
                 try 
                 { 
-                           
+                         device.platform="";  
 if (!window.plugins.pushNotification) {
   pushNotification = window.plugins.pushNotification;
 }
