@@ -1,7 +1,6 @@
 document.addEventListener("deviceready", function() {
   // Here you can use it:
   var pushNotification = window.plugins.pushNotification;
-  ...
 }, false);
 
             function onDeviceReady() {
