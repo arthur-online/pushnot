@@ -2,10 +2,6 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<meta name="format-detection" content="telephone=no" />
-<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-<link rel="stylesheet" type="text/css" href="css/index.css" />
 <title>Hello World</title>
 </head>
 <body>
@@ -13,46 +9,7 @@
 <h1>Hello World</h1>
 <div id="deviceready" class="blink">
 <p class="event listening">Connecting to Device</p>
-<p class="event received">Device is Ready</p>
 </div>
 </div>
-<script type="text/javascript" src="PushNotification.js"></script>
-<script>
-  
-  var pushNotification = window.plugins.pushNotification;
-pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});
-// result contains any message sent from the plugin call
-successHandler: function(result) {
-    alert('Callback Success! Result = '+result)
-};
-errorHandler:function(error) {
-    alert(error);
-};
-
-onNotificationGCM: function(e) {
-        switch( e.event )
-        {
-            case 'registered':
-                if ( e.regid.length > 0 )
-                {
-                    console.log("Regid " + e.regid);
-                    alert('registration id = '+e.regid);
-                }
-            break;
- 
-            case 'message':
-              // this is the actual push notification. its format depends on the data model from the push server
-              alert('message = '+e.message+' msgcnt = '+e.msgcnt);
-            break;
- 
-            case 'error':
-              alert('GCM error = '+e.msg);
-            break;
- 
-            default:
-              alert('An unknown GCM event has occurred');
-              break;
-        }
-    }
-</script>
+<script type="text/javascript" src="pushNotification.js"></script>
 </body>
