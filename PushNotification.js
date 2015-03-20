@@ -1,10 +1,10 @@
-var pushNotification;
+var pushNotification='';
 
             function onDeviceReady() {
                 alert('Device is ready');
                 try 
                 { 
-                    pushNotification = window.plugins.pushNotification;
+                    pushNotification = plugins.pushNotification;
               //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
               alert('Registering ' + device.platform);
                     if(device.platform == 'android' || device.platform == 'Android' ||device.platform == 'amazon-fireos' ) {
