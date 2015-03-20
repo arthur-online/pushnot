@@ -1,3 +1,5 @@
+// JavaScript Document
+
 alert('a');
 var pushNotification;
 
@@ -32,6 +34,7 @@ window.onNotificationGCM = function(e) {
 };
 
 function initialize() {
+	alert('entered')
     document.addEventListener("deviceready", function(){
         console.log("device ready");
 
@@ -50,3 +53,4 @@ function initialize() {
 
     });
 }
+initialize()
