@@ -1,11 +1,9 @@
+document.addEventListener("deviceready", function() {
+  // Here you can use it:
+  
 
-
-            function onDeviceReady() {
-                alert('Device is ready');
-                try 
-                { 
-                            var pushNotification
-                    pushNotification = window.plugins.PushNotification;
+            
+                            var pushNotification = window.plugins.pushNotification;
               //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
               alert('Registering ' + device.platform);
                     if(device.platform == 'android' || device.platform == 'Android' ||device.platform == 'amazon-fireos' ) {
@@ -18,14 +16,8 @@
                         alert('Registered the iOS device');
                     }
                 }
-                catch(err) 
-                { 
-                    txt="There was an error on this page.\n\n"; 
-                    txt+="Error description: " + err.message + "\n\n"; 
-                    //alert(txt); 
-                    alert('Error: ' + err.message);
-                } 
-            }
+              
+, false);
 
             // handle APNS notifications for iOS
             function onNotificationAPN(e) {
