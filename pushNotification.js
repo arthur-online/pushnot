@@ -1,13 +1,20 @@
-document.addEventListener("deviceready", function() {
-  // Here you can use it:
-  
+var pushNotification;
 
-            
-                            var pushNotification = window.plugins.pushNotification;
+            function onDeviceReady() {
+                alert('Device is ready');
+                try 
+                { 
+                    pushNotification = window.plugins.pushNotification;
               //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
               alert('Registering ' + device.platform);
                     if(device.platform == 'android' || device.platform == 'Android' ||device.platform == 'amazon-fireos' ) {
-                       pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});     // required!
+                        pushNotification.register(
+                        successHandler, 
+                        errorHandler, 
+                        {
+                            "senderID":"984949831491",
+                            "ecb":"onNotification"
+                        });     // required!
 
                         alert('Registered the Android device');
                         alert('regID = ' + e.regid);
@@ -16,8 +23,14 @@ document.addEventListener("deviceready", function() {
                         alert('Registered the iOS device');
                     }
                 }
-              
-, false);
+                catch(err) 
+                { 
+                    txt="There was an error on this page.\n\n"; 
+                    txt+="Error description: " + err.message + "\n\n"; 
+                    //alert(txt); 
+                    alert('Error: ' + err.message);
+                } 
+            }
 
             // handle APNS notifications for iOS
             function onNotificationAPN(e) {
