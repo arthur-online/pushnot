@@ -1,8 +1,13 @@
+alert('a');
 var pushNotification;
 
 function successHandler (result) {
+alert('success')
+    
 }
 function errorHandler (error) {
+alert('fail')
+    
 }
 
 window.onNotificationGCM = function(e) {
