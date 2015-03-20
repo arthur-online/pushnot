@@ -9,13 +9,7 @@
               //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
               alert('Registering ' + device.platform);
                     if(device.platform == 'android' || device.platform == 'Android' ||device.platform == 'amazon-fireos' ) {
-                        pushNotification.register(
-                        successHandler, 
-                        errorHandler, 
-                        {
-                            "senderID":"984949831491",
-                            "ecb":"onNotification"
-                        });     // required!
+                       pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});     // required!
 
                         alert('Registered the Android device');
                         alert('regID = ' + e.regid);
