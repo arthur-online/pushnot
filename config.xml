@@ -8,14 +8,12 @@
     <!-- versionCode is optional and Android only -->
 
     <name>Aginova Push</name>
-<icon src="icon.png" width="20" />
-<gap:splash src="splash.png" />
     <preference name="fullscreen" value="true" />
 
     <description>
         Aginova Push App 
     </description>
-  <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.5" source="plugins.cordova.io" />
+  <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.5"/>
   
   <access origin="*"/> <!-- allow all pages, use for development -->
 <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
