@@ -1,52 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<script>
-  function initPushwoosh()
-{
-  alert('step 1');
-
-    var pushNotification = window.plugins.pushNotification;
- alert('step 1a'+pushNotification)
-    //set push notifications handler
-    document.addEventListener('push-notification', function(event) {
-        var title = event.notification.title;
-        var userData = event.notification.userdata;
-                                 
-        if(typeof(userData) != "undefined") {
-            console.warn('user data: ' + JSON.stringify(userData));
-        }
-         alert('step 2');                            
-        alert(title);
-    });
- 
-    //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", pw_appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
-    pushNotification.onDeviceReady({ projectid: "988401405644", pw_appid : "A22A2-17AD0" });
- 
-    //register for pushes
-    pushNotification.registerDevice(
-        function(status) {
-            var pushToken = status;
-            console.warn('push token: ' + pushToken);
-        },
-        function(status) {
-            console.warn(JSON.stringify(['failed to register ', status]));
-        }
-    );
-}
-
-function init() {      
-    document.addEventListener("deviceready", initPushwoosh(), true);
-  /*document.addEventListener("deviceready", function(){
-      alert("123");
- },true);*/
-    //rest of the code
-}
-  init();
-</script>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<title>Hello World</title>
 </head>
-<body >
-Test Push
+<body>
+<div class="app">
+<h1>Hello World</h1>
+<div id="deviceready" class="blink">
+<p class="event listening">Connecting to Device</p>
+<p class="event received">Device is Ready</p>
+</div>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/PushwooshAndroid.js"></script>
+<script type="text/javascript" src="js/PushwooshiOS.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+app.initialize();
+</script>
 </body>
-  
-</html>
