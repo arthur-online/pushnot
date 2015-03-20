@@ -7,13 +7,13 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Aginova App</name>
+    <name>Aginova Push</name>
 <icon src="icon.png" width="20" />
 <gap:splash src="splash.png" />
     <preference name="fullscreen" value="true" />
 
     <description>
-        Aginova Internals App 
+        Aginova Push App 
     </description>
      <!--<gap:plugin name="org.li8.inappbrowser" version="0.1" />-->
   <gap:plugin name="com.phonegap.plugins.pushplugin" />
