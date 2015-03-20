@@ -15,12 +15,11 @@
     <description>
         Aginova Push App 
     </description>
-     <!--<gap:plugin name="org.li8.inappbrowser" version="0.1" />-->
-   <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
-<gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
-<preference name="StatusBarOverlaysWebView" value="false" />
-<preference name="StatusBarBackgroundColor" value="#000000" />
-<preference name="StatusBarStyle" value="lightcontent" />
+  <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.5" source="plugins.cordova.io" />
+  
+  <access origin="*"/> <!-- allow all pages, use for development -->
+<access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
+  
     <author href="http://www.aginova.com" email="arthur@aginova.com">
         Arthur Coutinho
     </author>
