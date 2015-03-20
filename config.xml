@@ -13,7 +13,6 @@
     <description>
         Aginova Internals App 
    </description>
-  <gap:plugin name="com.phonegap.plugins.pushplugin" />
   <access origin="*"/> <!-- allow all pages, use for development -->
 <access origin="*.pushwoosh.com"/> <!-- allow pushwoosh service -->
   <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.4.2" />
