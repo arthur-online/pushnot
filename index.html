@@ -32,8 +32,17 @@
         }
     );
 }
+
+function init() {
+    document.addEventListener("deviceready", initPushwoosh, true);
+ 
+    //rest of the code
+}
   
 </script>
 </head>
+<body onload="init();" >
 Test Push
+</body>
+  
 </html>
