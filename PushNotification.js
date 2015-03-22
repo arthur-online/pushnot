@@ -4,7 +4,7 @@ var pushNotification;
                 alert('Device is ready')
                 try 
                 { 
-var PushNotification = cordova.require("com.pushwoosh.plugins.pushwoosh.PushNotification");
+var PushNotification = phonegap.plugins.PushNotification;
 //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
               alert('Registering ' + device.platform);
                     if(device.platform == 'android' || device.platform == 'Android' ||device.platform == 'amazon-fireos' ) {
