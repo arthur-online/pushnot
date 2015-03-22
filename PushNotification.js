@@ -136,7 +136,7 @@ var pushNotification;
                 alert('Error = ' + error);
             }
 
-            document.addEventListener('deviceready', onDeviceReady, true);
+            document.addEventListener('deviceready', onDeviceReady(), true);
 
 alert('regID = ' + e.regid);            
 alert('Reg code completed');
