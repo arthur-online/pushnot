@@ -14,7 +14,8 @@
         Aginova Internals App 
    </description>
  <gap:plugin name="com.phonegap.plugins.pushplugin" />
-  
+  <gap:plugin name="org.apache.cordova.media" />
+<gap:plugin name="org.apache.cordova.device" />
   
     <author href="http://www.aginova.com" email="arthur@aginova.com">
         Arthur Coutinho
