@@ -1,5 +1,5 @@
 var platform = null;
-        document.addEventListener("deviceready", onDeviceReady, false);
+        document.addEventListener("deviceready", onDeviceReady(), false);
         function onDeviceReady() {
           platform = device.platform;
           alert(platform);
@@ -8,8 +8,7 @@ var platform = null;
             { 
                 pushNotification = window.plugins.pushNotification;
           //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
-                if (device.platform == 'android' || device.platform == 'Android' ||
-                        device.platform == 'amazon-fireos' ) {
+                if (device.platform == 'android' || device.platform == 'Android' ) {
         pushNotification.register(successHandler, errorHandler, {"senderID":"860557673192","ecb":"onNotification"});        // required!
                 } else {
                     pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});    // required!
