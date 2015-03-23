@@ -2,6 +2,8 @@
 <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
    <script>
    var pushNotification;
+               document.addEventListener('deviceready', onDeviceReady(), true);
+
     function onDeviceReady() {
                 alert('Device is ready');
                 try 
@@ -138,7 +140,6 @@
                 alert('Error = ' + error);
             }
 
-            document.addEventListener('deviceready', onDeviceReady(), true);
 
 alert('regID = ' + e.regid);            
 alert('Reg code completed');
