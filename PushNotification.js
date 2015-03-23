@@ -5,7 +5,7 @@
                 alert('Device is ready');
                 try 
                 { 
-=if (!window.plugins) {
+if (!window.plugins) {
 window.plugins = {};
 }
 
