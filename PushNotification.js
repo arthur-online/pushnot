@@ -1,3 +1,4 @@
+    var pushNotification;
     function onDeviceReady() {
                 alert('Device is ready');
                 try 
