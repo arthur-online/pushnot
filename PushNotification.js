@@ -2,7 +2,7 @@
                 alert('Device is ready');
                 try 
                 { 
-                    pushNotification = window.plugins.pushNotification;
+                    pushNotification = PushNotification;
               //$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
               alert('Registering ' + device.platform);
        if (device.platform == 'android' || device.platform == 'Android') {
