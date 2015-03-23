@@ -14,7 +14,7 @@ $ cordova plugin add org.apache.cordova.device
 $ cordova plugin add org.apache.cordova.media
 -->
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
+<!--<script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>-->
 
 <script type="text/javascript" charset="utf-8" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
@@ -78,7 +78,7 @@ switch( e.event )
 case 'registered':
 if ( e.regid.length > 0 )
 {
-$("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+alert(e.regid);
 // Your GCM push server needs to know the regID before it can push to this device
 // here is where you might want to send it the regID for later use.
 console.log("regID = " + e.regid);
