@@ -1,73 +1,48 @@
-function PushNotification() {}
-// Call this method in order to register the device to the PushNotification service
-// In the success callback you'll retreive the device push token
-PushNotification.prototype.registerDevice = function (googleProjectId, pushAppsToken, successCallback, errorCallback) {
-cordova.exec(
-successCallback,
-errorCallback,
-'PushAppsPlugin',
-'registerUser',
-[{
-"googleProjectId": googleProjectId,
-"appToken": pushAppsToken
-}]
-);
+var PushNotification = function() {
 };
-// Call this method to unregister this device from the push notification service
-PushNotification.prototype.unRegisterDevice = function (successCallback, errorCallback) {
-cordova.exec(
-successCallback,
-errorCallback,
-'PushAppsPlugin',
-'unRegisterUser',
-[]
-);
-};
-// Call this method to get the device id
-PushNotification.prototype.getDeviceId = function (successCallback, errorCallback) {
-cordova.exec(
-successCallback,
-errorCallback,
-'PushAppsPlugin',
-'getDeviceId',
-[]
-);
-};
-PushNotification.prototype.setTags = function (tags, successCallback, errorCallback) {
-cordova.exec(
-successCallback,
-errorCallback,
-'PushAppsPlugin',
-'setTags',
-tags
-);
-};
-PushNotification.prototype.removeTags = function (tagIdentifiers, successCallback, errorCallback) {
-cordova.exec(
-successCallback,
-errorCallback,
-'PushAppsPlugin',
-'removeTags',
-tagIdentifiers
-);
-};
-// Event spawned when a notification is received
-PushNotification.prototype.messageReceive = function (messageParams) {
-// The notification object
-var notification = JSON.parse(messageParams);
-var devicePlatform = device.platform;
-if (devicePlatform === "Android") {
-for (var key in notification) {
-if (notification.hasOwnProperty(key)) {
-var txt = document.createElement("textarea");
-txt.innerHTML = notification[key];
-notification[key] = txt.value;
+// Call this to register for push notifications. Content of [options] depends on whether we are working with APNS (iOS) or GCM (Android)
+PushNotification.prototype.register = function(successCallback, errorCallback, options) {
+if (errorCallback == null) { errorCallback = function() {}}
+if (typeof errorCallback != "function") {
+alert("PushNotification.register failure: failure parameter not a function");
+return;
 }
+if (typeof successCallback != "function") {
+alert("PushNotification.register failure: success callback parameter must be a function");
+return;
 }
-}
-var ev = document.createEvent('HTMLEvents');
-ev.notification = notification;
-ev.initEvent('pushapps.message-received', true, true, arguments);
-document.dispatchEvent(ev);
+cordova.exec(successCallback, errorCallback, "PushPlugin", "register", [options]);
 };
-module.exports = new PushNotification();
+// Call this to unregister for push notifications
+PushNotification.prototype.unregister = function(successCallback, errorCallback) {
+if (errorCallback == null) { errorCallback = function() {}}
+if (typeof errorCallback != "function") {
+alert("PushNotification.unregister failure: failure parameter not a function");
+return;
+}
+if (typeof successCallback != "function") {
+alert("PushNotification.unregister failure: success callback parameter must be a function");
+return;
+}
+cordova.exec(successCallback, errorCallback, "PushPlugin", "unregister", []);
+};
+// Call this to set the application icon badge
+PushNotification.prototype.setApplicationIconBadgeNumber = function(successCallback, badge) {
+if (errorCallback == null) { errorCallback = function() {}}
+if (typeof errorCallback != "function") {
+alert("PushNotification.setApplicationIconBadgeNumber failure: failure parameter not a function");
+return;
+}
+if (typeof successCallback != "function") {
+alert("PushNotification.setApplicationIconBadgeNumber failure: success callback parameter must be a function");
+return;
+}
+cordova.exec(successCallback, successCallback, "PushPlugin", "setApplicationIconBadgeNumber", [{badge: badge}]);
+};
+//-------------------------------------------------------------------
+if(!window.plugins) {
+window.plugins = {};
+}
+if (!window.plugins.pushNotification) {
+window.plugins.pushNotification = new PushNotification();
+}
