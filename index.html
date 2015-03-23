@@ -113,13 +113,13 @@ var soundfile = e.soundname || e.payload.sound;
 var my_media = new Media("/android_asset/www/"+ soundfile);
 my_media.play();
 }
-else
-{ // otherwise we were launched because the user touched a notification in the notification tray.
-if (e.coldstart)
+//else
+//{ // otherwise we were launched because the user touched a notification in the notification tray.
+//if (e.coldstart)
 //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-else
+//else
 //$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
-}
+//}
 //$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
 //android only
 //$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
