@@ -71,7 +71,7 @@ pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
 }
 }
 // handle GCM notifications for Android
-function onNotification(e) {
+window.onNotification = function(e){
 $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 switch( e.event )
 {
