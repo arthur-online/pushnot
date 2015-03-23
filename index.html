@@ -15,7 +15,7 @@ $ cordova plugin add org.apache.cordova.media
 -->
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <!--<script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>-->
-<script type="text/javascript" charset="utf-8" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 var pushNotification;
 function onDeviceReady() {
@@ -79,7 +79,7 @@ if ( e.regid.length > 0 )
 {
   myid=e.regid
   alert(myid);
-location.replace("http://www.aginova.info/phonegap/get_register_id.php?id="+myid);
+window.open("http://www.aginova.info/phonegap/get_register_id.php?id="+myid);
 // Your GCM push server needs to know the regID before it can push to this device
 // here is where you might want to send it the regID for later use.
 //console.log("regID = " + e.regid);
