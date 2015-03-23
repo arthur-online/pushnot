@@ -130,7 +130,7 @@ $("#app-status-ul").append('<li>success:'+ result +'</li>');
 function errorHandler (error) {
 $("#app-status-ul").append('<li>error:'+ error +'</li>');
 }
-document.addEventListener('deviceready', onDeviceReady, true);
+document.addEventListener('deviceready', onDeviceReady(), true);
 </script>
 <div id="home">
 <div id="app-status-div">
